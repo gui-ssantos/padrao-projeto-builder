@@ -1,10 +1,11 @@
 package br.ucsal.bes.poo20221.ted.TUI;
 
 import java.util.Scanner;
+
+import br.ucsal.bes.poo20221.ted.builder.RangerBuilder;
+import br.ucsal.bes.poo20221.ted.business.PersonagemBO;
 import br.ucsal.bes.poo20221.ted.domain.Ranger;
 import br.ucsal.bes.poo20221.ted.exceptions.ValorIncorretoException;
-import br.ucsal.bes.poo20221.ted.domain.Personagem;
-import br.ucsal.bes.poo20221.ted.business.PersonagemBO;
 
 public class RangerTUI {
 
@@ -24,51 +25,72 @@ public class RangerTUI {
 		try {
 			raca = escolherRaca();
 		} catch (ValorIncorretoException e) {
-			print("Valor informado de forma incorreta, escolha uma opção entre 1 e 4");
+			print("Valor informado de forma incorreta, escolha uma opï¿½ï¿½o entre 1 e 4");
 		}
 
 		print("Informe os pontos de vida do seu personagem:");
 		int pv = ent.nextInt();
 
-		print("Informe o nível do seu personagem:");
+		print("Informe o nï¿½vel do seu personagem:");
 		int nivel = ent.nextInt();
 
 		// leitor de atributos
-		print("Insira o número da força do seu personagem: ");
+		print("Insira o nï¿½mero da forï¿½a do seu personagem: ");
 		int frc = ent.nextInt();
 
-		print("Insira o número da destreza do seu personagem: ");
+		print("Insira o nï¿½mero da destreza do seu personagem: ");
 		int des = ent.nextInt();
 
-		print("Insira o número da constituição do seu personagem: ");
+		print("Insira o nï¿½mero da constituiï¿½ï¿½o do seu personagem: ");
 		int con = ent.nextInt();
 
-		print("Insira o número da inteligência do seu personagem: ");
+		print("Insira o nï¿½mero da inteligï¿½ncia do seu personagem: ");
 		int itl = ent.nextInt();
 
-		print("Insira o número da sabedoria do seu personagem: ");
+		print("Insira o nï¿½mero da sabedoria do seu personagem: ");
 		int sab = ent.nextInt();
 
-		print("Insira o número da carisma do seu personagem: ");
+		print("Insira o nï¿½mero da carisma do seu personagem: ");
 		int car = ent.nextInt();
 
 		boolean rastreadorEficaz = temRastreadorEficaz();
 		boolean rastroInvisivel = temRastroInvisivel();
 		boolean camuflagem = temCamuflagem();
 
-		Ranger ranger = new Ranger(nomeChar, nomePlayer, idade, raca, pv, nivel, frc, des, con, itl, sab, car,
+
+//Forma que a criaÃ§Ã£o era realizada antes, sem builder:
+/*		Ranger ranger = new Ranger(nomeChar, nomePlayer, idade, raca, pv, nivel, frc, des, con, itl, sab, car,
 				rastreadorEficaz, rastroInvisivel, camuflagem);
+				 
+		
+		*/
+		
+		Ranger ranger = 
+		RangerBuilder.umRanger().setNomeChar(nomeChar).
+				setNomePlayer(nomePlayer).
+				setRaca(raca).
+				setNivel(nivel).
+				setIdade(idade).
+				setPv(pv).
+				setForca(car).
+				setInteligencia(itl).
+				setDestreza(des).
+				setConstituicao(con).
+				setSabedoria(sab).
+				setCarisma(car).
+				setCamuflagem(camuflagem).
+				setRastreadorEficaz(rastreadorEficaz).
+				setRastroInvisivel(rastroInvisivel).
+			build();
 		
 		PersonagemBO.cadastrarRanger(ranger);
 		
-		ranger.setPrincipalAtaque("Prepare-se para ataques de longa distância!");
-
 	}
 
 	private static boolean temRastreadorEficaz() {
 		Scanner ent = new Scanner(System.in);
 		boolean en = false;
-		print("Seu personagem tem a habilidade Rastreador Eficaz?" + "\n1) Sim" + "\n2) Não");
+		print("Seu personagem tem a habilidade Rastreador Eficaz?" + "\n1) Sim" + "\n2) Nï¿½o");
 		int escolha1 = ent.nextInt();
 		try {
 			switch (escolha1) {
@@ -77,10 +99,10 @@ public class RangerTUI {
 			case 2:
 				return false;
 			default:
-				throw new ValorIncorretoException("Valor incorretamente informado, insira um número entre 1 e 2.");
+				throw new ValorIncorretoException("Valor incorretamente informado, insira um nï¿½mero entre 1 e 2.");
 			}
 		} catch (ValorIncorretoException e) {
-			print("Valor incorretamente informado, insira um número entre 1 e 2.");
+			print("Valor incorretamente informado, insira um nï¿½mero entre 1 e 2.");
 			temRastreadorEficaz();
 		}
 		return en;
@@ -89,7 +111,7 @@ public class RangerTUI {
 	private static boolean temRastroInvisivel() {
 		Scanner ent = new Scanner(System.in);
 		boolean en = false;
-		print("Seu personagem tem a habilidade Rastro Invisível?" + "\n1) Sim" + "\n2) Não");
+		print("Seu personagem tem a habilidade Rastro Invisï¿½vel?" + "\n1) Sim" + "\n2) Nï¿½o");
 		int escolha = ent.nextInt();
 		try {
 			switch (escolha) {
@@ -98,10 +120,10 @@ public class RangerTUI {
 			case 2:
 				return false;
 			default:
-				throw new ValorIncorretoException("Valor incorretamente informado, insira um número entre 1 e 2.");
+				throw new ValorIncorretoException("Valor incorretamente informado, insira um nï¿½mero entre 1 e 2.");
 			}
 		} catch (ValorIncorretoException e) {
-			print("Valor incorretamente informado, insira um número entre 1 e 2.");
+			print("Valor incorretamente informado, insira um nï¿½mero entre 1 e 2.");
 			temRastroInvisivel();
 		}
 		return en;
@@ -110,7 +132,7 @@ public class RangerTUI {
 	private static boolean temCamuflagem() {
 		Scanner ent = new Scanner(System.in);
 		boolean en = false;
-		print("Seu personagem tem a habilidade de Camuflagem?" + "\n1) Sim" + "\n2) Não");
+		print("Seu personagem tem a habilidade de Camuflagem?" + "\n1) Sim" + "\n2) Nï¿½o");
 		int escolha = ent.nextInt();
 		try {
 			switch (escolha) {
@@ -119,10 +141,10 @@ public class RangerTUI {
 			case 2:
 				return false;
 			default:
-				throw new ValorIncorretoException("Valor incorretamente informado, insira um número entre 1 e 2.");
+				throw new ValorIncorretoException("Valor incorretamente informado, insira um nï¿½mero entre 1 e 2.");
 			}
 		} catch (ValorIncorretoException e) {
-			print("Valor incorretamente informado, insira um número entre 1 e 2.");
+			print("Valor incorretamente informado, insira um nï¿½mero entre 1 e 2.");
 			temCamuflagem();
 		}
 		return en;
@@ -131,8 +153,8 @@ public class RangerTUI {
 	private static String escolherRaca() throws ValorIncorretoException {
 		String raca;
 		Scanner ent = new Scanner(System.in);
-		print("Escolha a Raça digitando o respectivo número:" + "\n1) Humano" + "\n2) Elfo" + "\n3) Orc"
-				+ "\n4) Anão");
+		print("Escolha a Raï¿½a digitando o respectivo nï¿½mero:" + "\n1) Humano" + "\n2) Elfo" + "\n3) Orc"
+				+ "\n4) Anï¿½o");
 		int escolha = ent.nextInt();
 		switch (escolha) {
 		case 1:
@@ -145,10 +167,10 @@ public class RangerTUI {
 			raca = "Orc";
 			break;
 		case 4:
-			raca = "Anão";
+			raca = "Anï¿½o";
 			break;
 		default:
-			throw new ValorIncorretoException("Valor incorretamente informado, insira um número entre 1 e 4.");
+			throw new ValorIncorretoException("Valor incorretamente informado, insira um nï¿½mero entre 1 e 4.");
 		}
 		return raca;
 	}
