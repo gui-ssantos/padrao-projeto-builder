@@ -3,7 +3,8 @@ package br.ucsal.bes.poo20221.ted.builder;
 import br.ucsal.bes.poo20221.ted.domain.Barbaro;
 
 public class BarbaroBuilder {
-	
+	//Builder com definição de valores padrão para os atributos da classe e métodos de criação do objeto.
+
 	private static final String NOMECHAR_DEFAULT = "Nome";
 	private static final String NOMEPLAYER_DEFAULT = "Nome";
 	private static final String RACA_DEFAULT = "Humano";
@@ -19,7 +20,7 @@ public class BarbaroBuilder {
 	private static final boolean ESQUIVAN_DEFAULT = false;
 	private static final boolean FURIA_DEFAULT = true;
 	private static final boolean REDUCAODANO_DEFAULT = true;
-	
+
 	private String nomeChar = NOMECHAR_DEFAULT;
 	private String nomePlayer = NOMEPLAYER_DEFAULT;
 	private String raca = RACA_DEFAULT;
@@ -35,31 +36,31 @@ public class BarbaroBuilder {
 	private boolean esquivaN = ESQUIVAN_DEFAULT;
 	private boolean furia = FURIA_DEFAULT;
 	private boolean reducaoDano = REDUCAODANO_DEFAULT;
-	
+
 	public static BarbaroBuilder umBarbaro() {
 		return new BarbaroBuilder();
 	}
-	
+
 	public BarbaroBuilder setNomeChar(String nomeChar) {
 		this.nomeChar = nomeChar;
 		return this;
 	}
-	
+
 	public BarbaroBuilder setNomePlayer(String nomePlayer) {
 		this.nomePlayer = nomePlayer;
 		return this;
 	}
-			
+
 	public BarbaroBuilder setRaca(String raca) {
 		this.raca = raca;
 		return this;
 	}
-	
+
 	public BarbaroBuilder setPv(int pv) {
 		this.pv = pv;
 		return this;
 	}
-	
+
 	public BarbaroBuilder setNivel(int nivel) {
 		this.nivel = nivel;
 		return this;
@@ -116,23 +117,23 @@ public class BarbaroBuilder {
 	}
 
 	public Barbaro build() {
-	    Barbaro barbaro = new Barbaro();
-	    barbaro.setNomeChar(nomeChar);
-	    barbaro.setNomePlayer(nomePlayer);
-	    barbaro.setRaca(raca);
-	    barbaro.setIdade(idade);
-	    barbaro.setPv(pv);
-	    barbaro.setNivel(nivel);
-	    barbaro.setFrc(forca);
-	    barbaro.setDes(destreza);
-	    barbaro.setCon(constituicao);
-	    barbaro.setItl(inteligencia);
-	    barbaro.setSab(sabedoria);
-	    barbaro.setCar(carisma);
-	    barbaro.setEsquivaN(esquivaN);
-	    barbaro.setFuria(furia);
-	    barbaro.setReducaoDano(reducaoDano);
-	    return barbaro;
+		Barbaro barbaro = new Barbaro();
+		barbaro.setNomeChar(nomeChar);
+		barbaro.setNomePlayer(nomePlayer);
+		barbaro.setRaca(raca);
+		barbaro.setIdade(idade);
+		barbaro.setPv(pv);
+		barbaro.setNivel(nivel);
+		barbaro.setFrc(forca);
+		barbaro.setDes(destreza);
+		barbaro.setCon(constituicao);
+		barbaro.setItl(inteligencia);
+		barbaro.setSab(sabedoria);
+		barbaro.setCar(carisma);
+		barbaro.setEsquivaN(esquivaN);
+		barbaro.setFuria(furia);
+		barbaro.setReducaoDano(reducaoDano);
+		return barbaro;
 	}
 
 }

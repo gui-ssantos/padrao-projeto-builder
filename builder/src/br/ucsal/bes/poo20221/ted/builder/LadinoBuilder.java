@@ -3,6 +3,7 @@ package br.ucsal.bes.poo20221.ted.builder;
 import br.ucsal.bes.poo20221.ted.domain.Ladino;
 
 public class LadinoBuilder {
+	//Builder com definição de valores padrão para os atributos da classe e métodos de criação do objeto.
 
     private static final String NOMECHAR_DEFAULT = "Nome";
 	private static final String NOMEPLAYER_DEFAULT = "Nome";

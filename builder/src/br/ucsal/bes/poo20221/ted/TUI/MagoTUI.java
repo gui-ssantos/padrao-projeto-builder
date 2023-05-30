@@ -56,13 +56,12 @@ public class MagoTUI {
 		boolean fireball = temFireball();
 		boolean persuasao = temPersuasao();
 		boolean curaFeitico = temCuraFeitico();
-
-		//Forma que a criação era realizada antes, sem builder:
-		/* Mago mago = new Mago(nomeChar, nomePlayer, idade, raca, pv, nivel, frc, des, con, itl, sab, car, fireball,
-				persuasao, curaFeitico);
 		
-		PersonagemBO.cadastrarMago(mago); */
-		
+//		BUILDER:
+//		Forma que a criação era realizada antes, sem builder:
+//		Mago mago = new Mago(nomeChar, nomePlayer, idade, raca, pv, nivel, frc, des, con, itl, sab, car, fireball,
+//		persuasao, curaFeitico);
+//		Criação com builder:
 		Mago mago = MagoBuilder.umMago().setNomeChar(nomeChar).
 				setNomePlayer(nomePlayer).
 				setIdade(idade).

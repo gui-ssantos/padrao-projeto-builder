@@ -57,16 +57,12 @@ public class RangerTUI {
 		boolean rastroInvisivel = temRastroInvisivel();
 		boolean camuflagem = temCamuflagem();
 
-
-//Forma que a criação era realizada antes, sem builder:
-/*		Ranger ranger = new Ranger(nomeChar, nomePlayer, idade, raca, pv, nivel, frc, des, con, itl, sab, car,
-				rastreadorEficaz, rastroInvisivel, camuflagem);
-				 
-		
-		*/
-		
-		Ranger ranger = 
-		RangerBuilder.umRanger().setNomeChar(nomeChar).
+//		BUILDER:
+//		Forma que a criação era realizada antes, sem builder:
+//		Ranger ranger = new Ranger(nomeChar, nomePlayer, idade, raca, pv, nivel, frc, des, con, itl, sab, car,
+//		rastreadorEficaz, rastroInvisivel, camuflagem);
+//		Criação com builder:
+		Ranger ranger = RangerBuilder.umRanger().setNomeChar(nomeChar).
 				setNomePlayer(nomePlayer).
 				setRaca(raca).
 				setNivel(nivel).

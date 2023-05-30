@@ -57,13 +57,11 @@ public class BarbaroTUI {
 		boolean furia = temFuria();
 		boolean reducaoDano = temReducaoDeDano();
 
-
-//	Forma que a criação era realizada antes, sem builder:
+// 		BUILDER:
+//		Forma que a criação era realizada antes, sem builder:
 //		Barbaro barbaro = new Barbaro(nomeChar, nomePlayer, idade, raca, pv, nivel, frc, des, con, itl, sab, car,
 //				esquivaN, furia, reducaoDano);
-//		
-//		
-		
+//		Criação com builder:
 		Barbaro barbaro = BarbaroBuilder.umBarbaro().setNomeChar(nomeChar).
 				setNomePlayer(nomePlayer).
 				setIdade(idade).

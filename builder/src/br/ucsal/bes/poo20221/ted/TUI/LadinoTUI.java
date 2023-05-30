@@ -55,8 +55,10 @@ public class LadinoTUI {
 		boolean esquivaSN = temEsquivaSN();
 		boolean furtiSuperior = temFurtiSuperior();
 		
-		//Forma que a criação era realizada antes, sem builder:
-		// Ladino ladino = new Ladino(nomeChar, nomePlayer, idade, raca, pv, nivel,frc, des, con, itl, sab, car, ataqueFurtivo, esquivaSN, furtiSuperior);
+//		BUILDER:
+//		Forma que a criação era realizada antes, sem builder:
+//		Ladino ladino = new Ladino(nomeChar, nomePlayer, idade, raca, pv, nivel,frc, des, con, itl, sab, car, ataqueFurtivo, esquivaSN, furtiSuperior);
+//		Criação com builder:
 		
 		Ladino ladino = LadinoBuilder.umLadino().setNomeChar(nomeChar).
 				setNomePlayer(nomePlayer).
