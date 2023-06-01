@@ -2,7 +2,7 @@ package br.ucsal.bes.poo20221.ted.builder;
 
 import br.ucsal.bes.poo20221.ted.domain.Mago;
 
-public class MagoBuilder {
+public class MagoBuilder implements PersonagemBuilder {
 	//Builder com definição de valores padrão para os atributos da classe e métodos de criação do objeto.
 	
     private static final String NOMECHAR_DEFAULT = "Nome";
@@ -41,61 +41,73 @@ public class MagoBuilder {
 		return new MagoBuilder();
 	}
 	
+	@Override
 	public MagoBuilder setNomeChar(String nomeChar) {
 		this.nomeChar = nomeChar;
 		return this;
 	}
 	
+	@Override
 	public MagoBuilder setNomePlayer(String nomePlayer) {
 		this.nomePlayer = nomePlayer;
 		return this;
 	}
-			
+	
+	@Override
 	public MagoBuilder setRaca(String raca) {
 		this.raca = raca;
 		return this;
 	}
 	
+	@Override
 	public MagoBuilder setPv(int pv) {
 		this.pv = pv;
 		return this;
 	}
 	
+	@Override
 	public MagoBuilder setNivel(int nivel) {
 		this.nivel = nivel;
 		return this;
 	}
 
+	@Override
 	public MagoBuilder setIdade(int idade) {
 		this.idade = idade;
 		return this;
 	}
 
+	@Override
 	public MagoBuilder setForca(int forca) {
 		this.forca = forca;
 		return this;
 	}
 
+	@Override
 	public MagoBuilder setDestreza(int destreza) {
 		this.destreza = destreza;
 		return this;
 	}
 
+	@Override
 	public MagoBuilder setConstituicao(int constituicao) {
 		this.constituicao = constituicao;
 		return this;
 	}
 
+	@Override
 	public MagoBuilder setInteligencia(int inteligencia) {
 		this.inteligencia = inteligencia;
 		return this;
 	}
 
+	@Override
 	public MagoBuilder setSabedoria(int sabedoria) {
 		this.sabedoria = sabedoria;
 		return this;
 	}
 
+	@Override
 	public MagoBuilder setCarisma(int carisma) {
 		this.carisma = carisma;
 		return this;
@@ -116,6 +128,7 @@ public class MagoBuilder {
 		return this;
 	}
 	
+	@Override
 	public Mago build() {
 	    Mago mago = new Mago();
 	    mago.setNomeChar(nomeChar);

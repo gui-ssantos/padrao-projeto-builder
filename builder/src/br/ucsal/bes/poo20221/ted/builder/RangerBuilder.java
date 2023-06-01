@@ -2,7 +2,7 @@ package br.ucsal.bes.poo20221.ted.builder;
 
 import br.ucsal.bes.poo20221.ted.domain.Ranger;
 
-public class RangerBuilder {
+public class RangerBuilder implements PersonagemBuilder {
 	//Builder com definição de valores padrão para os atributos da classe e métodos de criação do objeto.
 	
 
@@ -42,66 +42,79 @@ public class RangerBuilder {
 		return new RangerBuilder();
 	}
 	
+    @Override
 	public RangerBuilder setNomeChar(String nomeChar) {
 		this.nomeChar = nomeChar;
 		return this;
 	}
-	
+    
+    @Override
 	public RangerBuilder setNomePlayer(String nomePlayer) {
 		this.nomePlayer = nomePlayer;
 		return this;
 	}
 			
+    @Override
 	public RangerBuilder setRaca(String raca) {
 		this.raca = raca;
 		return this;
 	}
 	
+    @Override
 	public RangerBuilder setPv(int pv) {
 		this.pv = pv;
 		return this;
 	}
 	
+    @Override
 	public RangerBuilder setNivel(int nivel) {
 		this.nivel = nivel;
 		return this;
 	}
 
+    @Override
 	public RangerBuilder setIdade(int idade) {
 		this.idade = idade;
 		return this;
 	}
 
+    @Override
 	public RangerBuilder setForca(int forca) {
 		this.forca = forca;
 		return this;
 	}
 
+    @Override
 	public RangerBuilder setDestreza(int destreza) {
 		this.destreza = destreza;
 		return this;
 	}
 
+    @Override
 	public RangerBuilder setConstituicao(int constituicao) {
 		this.constituicao = constituicao;
 		return this;
 	}
 
+    @Override
 	public RangerBuilder setInteligencia(int inteligencia) {
 		this.inteligencia = inteligencia;
 		return this;
 	}
 
+    @Override
 	public RangerBuilder setSabedoria(int sabedoria) {
 		this.sabedoria = sabedoria;
 		return this;
 	}
 
+    @Override
 	public RangerBuilder setCarisma(int carisma) {
 		this.carisma = carisma;
 		return this;
 	}
 
+    
 	public RangerBuilder setRastreadorEficaz(boolean rastreadorEficaz) {
 		this.rastreadorEficaz = rastreadorEficaz;
 		return this;
@@ -117,6 +130,7 @@ public class RangerBuilder {
 		return this;
 	}
 	
+	@Override
 	public Ranger build() {
 	    Ranger ranger = new Ranger();
 	    ranger.setNomeChar(nomeChar);
