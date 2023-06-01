@@ -2,7 +2,7 @@ package br.ucsal.bes.poo20221.ted.builder;
 
 import br.ucsal.bes.poo20221.ted.domain.Barbaro;
 
-public class BarbaroBuilder {
+public class BarbaroBuilder implements PersonagemBuilder {
 	//Builder com definição de valores padrão para os atributos da classe e métodos de criação do objeto.
 
 	private static final String NOMECHAR_DEFAULT = "Nome";
@@ -41,61 +41,73 @@ public class BarbaroBuilder {
 		return new BarbaroBuilder();
 	}
 
+	@Override
 	public BarbaroBuilder setNomeChar(String nomeChar) {
 		this.nomeChar = nomeChar;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setNomePlayer(String nomePlayer) {
 		this.nomePlayer = nomePlayer;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setRaca(String raca) {
 		this.raca = raca;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setPv(int pv) {
 		this.pv = pv;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setNivel(int nivel) {
 		this.nivel = nivel;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setIdade(int idade) {
 		this.idade = idade;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setForca(int forca) {
 		this.forca = forca;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setDestreza(int destreza) {
 		this.destreza = destreza;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setConstituicao(int constituicao) {
 		this.constituicao = constituicao;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setInteligencia(int inteligencia) {
 		this.inteligencia = inteligencia;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setSabedoria(int sabedoria) {
 		this.sabedoria = sabedoria;
 		return this;
 	}
 
+	@Override
 	public BarbaroBuilder setCarisma(int carisma) {
 		this.carisma = carisma;
 		return this;
@@ -116,6 +128,7 @@ public class BarbaroBuilder {
 		return this;
 	}
 
+	@Override
 	public Barbaro build() {
 		Barbaro barbaro = new Barbaro();
 		barbaro.setNomeChar(nomeChar);
